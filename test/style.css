@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    height: calc(100% - 20px);
+    width: calc(100% - 120px);
+    margin: 10px;
+    padding: 20px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.neon-bar {
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+.TBside {
+    width: calc(100vw - 37px);
+    margin: 0 auto;
+}
+
+.Lside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100vh;
+}
+
+.Rside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100vh;
+}
+
+
+@keyframes neon {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.box {
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+    color: transparent;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.highlight-box {
+    background-color: #f7c300;
+    height: 50px;
+    width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 0.5s ease-out, width 0.5s, height 0.5s, opacity 1s;
+}
+
+.highlight-box::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 2px #000;
+    z-index: -1;
+}
+
+.highlight-color {
+    color: black;
+}
+
+.box1,
+.box3,
+.box5,
+.box7,
+.box9,
+.box11 {
+    height: 150px;
+    width: 200px;
+}
+
+.box2,
+.box4,
+.box6,
+.box8,
+.box10 {
+    height: 200px;
+    width: 300px;
+}
+
+.moving-div {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    animation-name: move;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: -5px;
+        left: 5px;
+    }
+
+    50% {
+        top: 0px;
+        left: 10px;
+    }
+
+    75% {
+        top: 5px;
+        left: 5px;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
